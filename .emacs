@@ -63,3 +63,8 @@
 (set-face-attribute 'default nil :height 180)
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
+
+(setq make-backup-files nil)
+
+(global-linum-mode 1)
+(setq linum-format "%d ")
