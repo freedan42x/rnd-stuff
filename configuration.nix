@@ -5,9 +5,9 @@ let
   unstableTarball =
     fetchTarball
       https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
-  all-hies = 
-    import (fetchTarball 
-      https://github.com/infinisil/all-hies/tarball/master) {};
+  #all-hies = 
+  #  import (fetchTarball 
+  #    https://github.com/infinisil/all-hies/tarball/master) {};
 in
 
 
@@ -17,6 +17,7 @@ in
   imports =
     [
       ./hardware-configuration.nix
+      ./vscode.nix
     ];
 
   boot = {
@@ -44,6 +45,7 @@ in
       pkgs.broadcom-bt-firmware
     ];
     pulseaudio.enable = true;
+    opengl.driSupport32Bit = true;
   };
 
 
@@ -63,6 +65,20 @@ in
         config = config.nixpkgs.config;
       };
     };
+    latestPackages = [
+      "vscode"
+      "vscode-extensions"
+    ];
+  };
+
+
+  vscode = {
+    user = "freedan42x";
+    homeDir = "home/freedan42x";
+    extensions = with pkgs.vscode-extensions; [
+      ms-python.python
+      justusadam.language-haskell
+    ];
   };
 
 
@@ -72,6 +88,7 @@ in
     slack
     discord
     unstable.tdesktop
+    unstable.steam
 
     # Haskell
     unstable.ghc
@@ -81,16 +98,13 @@ in
     haskellPackages.alex
     haskellPackages.happy
     haskellPackages.hoogle
-    haskell.compiler.ghcjs
     cabal2nix
     unstable.stack
-    (all-hies.selection { selector = p: { inherit (p) ghc865; }; })
+    # (all-hies.selection { selector = p: { inherit (p) ghc865; }; })
 
     # Software
     zerotierone
     thunderbird
-    kdeApplications.okular
-    squirrel-sql
     google-chrome
     vscode
     atom
@@ -137,6 +151,7 @@ in
         xfce.enable = true;
         default = "xfce";
       };
+      synaptics.enable = true;
     };
     zerotierone = {
       enable = true;
