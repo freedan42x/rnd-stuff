@@ -1,2 +1,2 @@
 # rnd-stuff
-Some random code I've written due to boredom and configs
+Some configs and random code that I've written due to boredom
