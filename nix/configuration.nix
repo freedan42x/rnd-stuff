@@ -119,6 +119,8 @@ in
     lxappearance-gtk3
     gdk_pixbuf
     adapta-gtk-theme
+    ant-theme
+    arc-theme
     cachix
     rofi
     xdotool

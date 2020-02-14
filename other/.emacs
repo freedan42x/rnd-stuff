@@ -34,6 +34,7 @@
 (setq moe-theme-highlight-buffer-id nil)
 (setq moe-light-pure-white-background-in-terminal t)
 (setq abbrev-file-name "~/.emacs.d/abbrev_defs")
+(setq pylint-options '("--indent-string='  '"))
 (defun display-startup-echo-area-message () (message ""))
 
 (global-display-line-numbers-mode)
@@ -49,4 +50,7 @@
     (setq python-indent-offset 2)))
 
 (add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t) 
+(setq jedi:complete-on-dot t)
+
+(require 'flymake-python-pyflakes)
+(add-hook 'python-mode-hook 'flymake-python-pyflakes-load)

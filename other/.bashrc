@@ -1,3 +1,5 @@
+PATH=$PATH:~/.local/bin
+
 PS1="\n\[\e[1;32m\][$USER@\h:\w]\$\[\e[0m\] "
 
 em() {
@@ -8,3 +10,5 @@ mkcd() {
   mkdir -p "$1"
   cd "$1"  
 }
+
+alias py=python
