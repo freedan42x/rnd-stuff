@@ -99,12 +99,13 @@ bar {
   status_command i3status
 }
 
-client.focused #e1e8f2 #ffffff #e1e8f2 #e1e8f2
-client.focused_inactive #e1e8f2 #ffffff #e1e8f2 #e1e8f2
-client.unfocused #e1e8f2 #ffffff #e1e8f2 #e1e8f2
+client.focused #171515 #e1e8f2 #171515 #e1e8f2 #e1e8f2
+client.focused_inactive #171515 #e1e8f2 #2e2c2c #e1e8f2 #e1e8f2
+client.unfocused #171515 #171515 #e1e8f2 #e1e8f2 #e1e8f2
 
 
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border none
+for_window [class="Termite"] border pixel 3
 
 for_window [class="Chromium"] move container to workspace $ws1
 for_window [class="Emacs"] move container to workspace $ws3; workspace $ws3
