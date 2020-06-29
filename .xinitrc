@@ -34,5 +34,5 @@ xset r rate 200 60
 setxkbmap -layout us,ru
 setxkbmap -option 'grp:alt_shift_toggle'
 xinput set-prop 18 324 1
-xinput set-prop 10 315 -0.5
+xinput set-prop 10 315 -0.8
 exec i3

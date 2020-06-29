@@ -1,30 +1,32 @@
 general {
   output_format = i3bar
   markup = pango
-  colors = true
+  colors = false
 }
 
 order += "battery 0"
 battery 0 {
-  format = "Battery: <span foreground='#a0ffe6'>%percentage</span>"
+  # format = "Battery: <span foreground='#a0ffe6'>%percentage</span>"
+  format = "%percentage"
   path = "/sys/class/power_supply/BAT0/uevent"
   low_threshold = 10
 }
 
-order += "cpu_usage"
-cpu_usage {
-  format = "CPU: <span foreground='#a0ffe6'>%usage</span>"
-}
+# order += "cpu_usage"
+# cpu_usage {
+#   format = "CPU: <span foreground='#a0ffe6'>%usage</span>"
+# }
 
-order += "memory"
-memory {
-  format = "RAM: <span foreground='#a0ffe6'>%used</span>/<span foreground='#a0ffe6'>%total</span>"
-  threshold_degraded = "15%"
-  threshold_critical = "10%"
-}
+# order += "memory"
+# memory {
+#   format = "RAM: <span foreground='#a0ffe6'>%used</span>/<span foreground='#a0# ffe6'>%total</span>"
+#   threshold_degraded = "15%"
+#   threshold_critical = "10%"
+# }
 
 order += "tztime local"
 tztime local {
-  format = "<span foreground='#fac5c0'>%time</span>"
-  format_time = "%m/%d %H:%M:%S"
+  # format = "<span foreground='#fac5c0'>%time</span>"
+  format = "%time"
+  format_time = "%H:%M:%S"
 }
