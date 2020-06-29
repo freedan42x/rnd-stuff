@@ -1,4 +1,4 @@
-module Equality where
+module Inequality where
 
 open import Relation.Binary.PropositionalEquality
 open import Data.Nat
